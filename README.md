@@ -11,9 +11,9 @@ $ git clone git@github.com:kukosmos/android-app-server-2019.git
 ```
 
 ## Requirement
-Install nodejs, npm
+Install NodeJS, npm
 
-## Install
+## Install Node Modules
 ```
 $ npm install
 ```
