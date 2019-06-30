@@ -1,0 +1,11 @@
+{
+  "id": "0002",
+  "restaurant": "dummy korean restaurant 2",
+  "location": "dummy location",
+  "rating": 4.2,
+  "menues": {
+    "a": 3000,
+    "b": 2000,
+    "c": 1000
+  }
+}
