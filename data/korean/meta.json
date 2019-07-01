@@ -1,4 +1,5 @@
 {
+  "count": 2,
   "0001": {"restaurant": "dummy korean restaurant 1", "rating": 3.5},
   "0002": {"restaurant": "dummy korean restaurant 2", "rating": 4.2}
 }
