@@ -50,9 +50,8 @@ router.get('/', function (req, res){
     var idxs = range(candidates.length);
     var weights = [];
     candidates.forEach(element => {
-        weights.push(element[1]);
+        weights.push(element.rating);
     });
-
     var n = min2(3, candidates.length);
     var restaurants = [];
     for(var i = 0; i < n; i++){
