@@ -8,7 +8,7 @@ router.get('/', function (req, res){
 });
 
 router.get('/write', function (req, res){
-    res.sendFile(__dirname+'/write.html');
+    res.render('admin/write.html');
 });
 
 //body-parser
