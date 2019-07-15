@@ -4,12 +4,11 @@
    <meta charset="UTF-8">
    <title>음식점 작성</title>
  </head>
-
  <body>
    <h1>음식점 추가</h1>
    <br>
-    <form method="post">
-       <table>
+    <form id = "form" method="post">
+       <table id = "restaurant_table">
          <tr>
            <td><label>category</label></td>
            <td><input type="text" name="category"></td>
@@ -34,8 +33,31 @@
           <td><label>menues</label></td>
           <td><input type="text" name="menues"></td>
         </tr>
+          <td><label>price</label></td>
+          <td><input type="number" name="price"></td>
+        </tr>
        </table>
-       <input type="submit" value="전송" name="">
-    </form>
+      
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       <script>
+          function add(){
+            var new_button_num = parseInt($('#total_button').val())+1;
+            var new_input="<input type='text' id='new_"+new_button_num+"'>";
+            $('#new_button').append(new_input);
+            $('#total_button').val(new_button_num);
+          }
+      </script>
+      <input type="text">
+        <button type ="button" onclick="add()">Add</button>
+        <div id="new_button"></div>
+        <input type="hidden" value="1" id="total_button">   
+      <input type="submit" value="submit" name="">
+    </form> 
  </body>
 </html>
+
+
+
+
+ 
+    
