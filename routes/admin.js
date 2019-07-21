@@ -21,8 +21,7 @@ router.post('/write', function(req, res) {
     var file = fs.readFileSync(meta_path, 'utf8');
     var meta = JSON.parse(file);
     
-    
-    if(meta[req.body.id] != 'undefined'){
+    if(typeof(meta[req.body.id]) != 'undefined'){
         console.log('id = ' + req.body.id + " already exist");
         return;
     }
