@@ -48,11 +48,16 @@ router.get('/', function (req, res){
         }
     });
     var idxs = range(candidates.length);
+    
     var weights = [];
     candidates.forEach(element => {
-        weights.push(element.rating);
+        if(typeof(element.rating) == 'undefined') {
+             weights.push(0);
+        }else{
+             weights.push(element.rating);
+        }
     });
-    var n = min2(3, candidates.length);
+    var n = min2(3, candidates.length-1);
     var restaurants = [];
     for(var i = 0; i < n; i++){
         var chosen = chance.weighted(idxs, weights);
