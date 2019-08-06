@@ -6,16 +6,16 @@
    <title>음식점 작성</title>
  </head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-       <script>
-          function add(){
-            var new_button_num = parseInt($('#total_button').val())+1;
-            var new_menu="<input type='text' name='menu["+new_button_num+"]'>";
-            var new_price="<input type='number' name='price["+new_button_num+"]'>";
-            $('#new_menu').append(new_menu);
-            $('#new_price').append(new_price);
-            $('#total_button').val(new_button_num);
-          }
-      </script>
+  <script>
+    function add(){
+      var new_button_num = parseInt($('#total_button').val())+1;
+      var new_menu="<input type='text' name='menu["+new_button_num+"]'>";
+      var new_price="<input type='number' name='price["+new_button_num+"]'>";
+      $('#new_menu').append(new_menu);
+      $('#new_price').append(new_price);
+      $('#total_button').val(new_button_num);
+    }
+  </script>
  <body>
    <h1>음식점 추가</h1>
    <br>
