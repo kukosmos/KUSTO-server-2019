@@ -1,0 +1,10 @@
+{
+  "id": "0000",
+  "restaurant": "I want Water",
+  "location": "some where in Anam",
+  "rating": 2.5,
+  "menues": {
+    "Water": 3000,
+    "Beer": 2500
+  }
+}
