@@ -1,71 +1,64 @@
 <!DOCTYPE html>
-
 <html>
- <head>
-   <meta charset="UTF-8">
-   <title>음식점 작성</title>
- </head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script>
-    function add(){
-      var new_button_num = parseInt($('#total_button').val())+1;
-      var new_menu="<input type='text' name='menu["+new_button_num+"]'>";
-      var new_price="<input type='number' name='price["+new_button_num+"]'>";
-      $('#new_menu').append(new_menu);
-      $('#new_price').append(new_price);
-      $('#total_button').val(new_button_num);
-    }
-  </script>
- <body>
-   <h1>음식점 추가</h1>
-   <br>
-    <form id="form" method="post">
-       <table id="restaurant_table">
-         <tr>
-           <td><label>category</label></td>
-           <td>
-             <select name="category">
-               <option value="america">america</option>
-               <option value="china">china</option>
-               <option value="desert">desert</option>
-               <option value="fast">fast</option>
-               <option value="guitar">guitar</option>
-               <option value="japan">japan</option>
-               <option value="korean">korean</option>
-               <option value="night">night</option>
-               <option value="school">school</option>
-             </select>
-           </td>
-         </tr>
-         <tr>
-           <td><label>id</label></td>
-           <td><input type="text" name="id"></td>
-         </tr>
-         <tr>
-           <td><label>restaurant</label></td>
-           <td><input type="text" name="restaurant"></td>
-         </tr>
-         <tr>
-          <td><label>location</label></td>
-          <td><input type="text" name="location"></td>
-        </tr>
-        <tr>
-          <td><label>rating</label></td>
-          <td><input type="number" step="any" min="0" max="5" name="rating"></td>
-        </tr>
-        <tr>
-          <td><label>menues</label></td>
-          <td id="new_menu"></td>
-        </tr>       
-          <td><label>price</label></td>
-          <td id="new_price"></td>
-        </tr>
-       </table>
-      
-     
-        <button type ="button" onclick="add()">Add Menu</button>
-        <input type="hidden" value="0" id="total_button" name="total_button">   
-      <input type="submit" value="submit" name="">
-    </form> 
- </body>
+<head>
+  <meta charset="UTF-8">
+  <title>음식점 작성</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  function add(){
+    var new_button_num = parseInt($('#total_button').val())+1;
+    var new_menu="<input type='text' name='menu["+new_button_num+"]'>";
+    var new_price="<input type='number' name='price["+new_button_num+"]'>";
+    $('#new_menu').append(new_menu);
+    $('#new_price').append(new_price);
+    $('#total_button').val(new_button_num);
+  }
+</script>
+<body>
+  <h1>음식점 추가</h1>
+  <br>
+  <form id="form" method="post">
+    <table id="restaurant_table">
+      <tr>
+        <td><label>category</label></td>
+        <td>
+          <select name="category">
+            <option value="america">america</option>
+            <option value="china">china</option>
+            <option value="desert">desert</option>
+            <option value="fast">fast</option>
+            <option value="guitar">guitar</option>
+            <option value="japan">japan</option>
+            <option value="korean">korean</option>
+            <option value="night">night</option>
+            <option value="school">school</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label>id</label></td>
+        <td><input type="text" name="id"></td>
+      </tr>
+      <tr>
+        <td><label>restaurant</label></td>
+        <td><input type="text" name="restaurant"></td>
+      </tr>
+      <tr>
+        <td><label>location</label></td>
+        <td><input type="text" name="location"></td>
+      </tr>
+      <tr>
+        <td><label>menues</label></td>
+        <td id="new_menu"></td>
+      </tr>       
+        <td><label>price</label></td>
+        <td id="new_price"></td>
+      </tr>
+    </table>
+  <button type ="button" onclick="add()">Add Menu</button>
+  <input type="hidden" value="0" id="total_button" name="total_button">   
+  <input type="submit" value="submit" name="">
+  </form> 
+</body>
 </html>
