@@ -31,6 +31,14 @@ router.post('/write', function(req, res) {
     
     if(typeof(meta[req.body.id]) != 'undefined'){
         console.log('id = ' + req.body.id + " already exist");
+        res.render('error', {
+            message: 'Cannot add restaurtant',
+            error: {
+                status: 'id = ' + req.body.id + " already exist",
+                stack: ''
+            }
+        })
+        res.end();
         return;
     }
     
@@ -61,7 +69,6 @@ router.post('/write', function(req, res) {
         }
     });
     
-    
     var metaArr = {};
     meta.count = meta.count +1;
     metaArr['restaurant'] = req.body.restaurant;
@@ -78,8 +85,8 @@ router.post('/write', function(req, res) {
         }
     });
     
-        
-    
+    res.render('admin/success', { restaurant: req.body.restaurant });
+    res.end();
   });
 
 module.exports = router;
