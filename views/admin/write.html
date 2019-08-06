@@ -14,6 +14,11 @@
     $('#new_price').append(new_price);
     $('#total_button').val(new_button_num);
   }
+  function getid(){
+    $.get('/admin/newid', {category: $('#category option:selected').val()}, function(id) {
+      $('#id').val(id);
+    }, 'text')
+  }
 </script>
 <body>
   <h1>음식점 추가</h1>
@@ -23,7 +28,8 @@
       <tr>
         <td><label>category</label></td>
         <td>
-          <select name="category">
+          <select id="category" name='category' onchange="getid()">
+            <option selected hidden>choose one</option>
             <option value="america">america</option>
             <option value="china">china</option>
             <option value="desert">desert</option>
@@ -38,7 +44,7 @@
       </tr>
       <tr>
         <td><label>id</label></td>
-        <td><input type="text" name="id"></td>
+        <td><input type="text" id="id" name="id" value=""></td>
       </tr>
       <tr>
         <td><label>restaurant</label></td>

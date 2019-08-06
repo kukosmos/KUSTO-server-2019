@@ -57,7 +57,7 @@ router.post('/write', function(req, res) {
             console.error();
         }
         else{
-            console.log('done');
+            console.log('restaurant done');
         }
     });
     
@@ -74,7 +74,7 @@ router.post('/write', function(req, res) {
             console.error();
         }
         else{
-            console.log('done');
+            console.log('meta done');
         }
     });
     
