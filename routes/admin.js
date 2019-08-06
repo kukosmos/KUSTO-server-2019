@@ -16,6 +16,14 @@ router.use(bodyParser.urlencoded({extended: false}));
 //body-parser을 이용해 파싱
 router.use(bodyParser.json());
 
+router.get('/newid', function(req, res) {
+    var meta_path = __dirname + '/../data/' + req.query['category'] + '/meta.json';
+    var file = fs.readFileSync(meta_path, 'utf8');
+    var meta = JSON.parse(file);
+
+    res.send(('000' + meta.count).slice(-4));
+});
+
 router.post('/write', function(req, res) {
     var meta_path = __dirname + '/../data/' + req.body.category + '/meta.json';
     var file = fs.readFileSync(meta_path, 'utf8');
