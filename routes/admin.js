@@ -48,7 +48,7 @@ router.post('/write', function(req, res) {
     obj.id = req.body.id;
     obj.restaurant = req.body.restaurant;
     obj.location = req.body.location;
-    obj.rating = parseFloat(req.body.rating);
+    obj.rating = 2.5
     obj.menues = menuArr;     
     
     var json = JSON.stringify(obj, null, 2);
