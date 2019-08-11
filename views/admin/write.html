@@ -6,18 +6,20 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-  function add(){
-    var new_button_num = parseInt($('#total_button').val())+1;
-    var new_menu="<input type='text' name='menu["+new_button_num+"]'>";
-    var new_price="<input type='number' name='price["+new_button_num+"]'>";
-    $('#new_menu').append(new_menu);
-    $('#new_price').append(new_price);
-    $('#total_button').val(new_button_num);
-  }
   function getid(){
     $.get('/admin/newid', {category: $('#category option:selected').val()}, function(id) {
       $('#id').val(id);
     }, 'text')
+  }
+  function makeMenu(n){
+    $('*[id*=entry]:visible').each(function() {
+      $(this).remove();
+    });
+    var i;
+    for(i = 0; i < n; i++){
+      var new_menu_entry="<tr id='entry["+i+"]'><td><input type='text' name='menu["+i+"]'></td><td><input type='number' min='0' step='1' name='price["+i+"]'></td></tr>";
+      $('#restaurant_table').append(new_menu_entry);
+    }
   }
 </script>
 <body>
@@ -55,11 +57,16 @@
         <td><input type="text" name="location"></td>
       </tr>
       <tr>
+        <td><label>total menues</label></td>
+        <td><input type='number' min='1' value='1' step='1' id='total_menu' name='total_menu' oninput="makeMenu(this.value)"></td>
+      </tr>
+      <tr>
         <td><label>menues</label></td>
-        <td id="new_menu"></td>
-      </tr>       
         <td><label>price</label></td>
-        <td id="new_price"></td>
+      </tr>
+      <tr id='entry[0]'>
+        <td><input type='text' name='menu[0]'></td>
+        <td><input type='number' min='0' step='1' name='price[0]'></td>
       </tr>
     </table>
   <button type ="button" onclick="add()">Add Menu</button>

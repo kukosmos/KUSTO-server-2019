@@ -44,7 +44,7 @@ router.post('/write', function(req, res) {
     
     
     var obj = {};
-    var i = req.body.total_button;
+    var i = req.body.total_menu;
     var menuArr = {};
     for(let j = 1; j <= i ; j++){
         var menu = req.body["menu["+j+"]"];
