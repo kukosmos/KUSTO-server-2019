@@ -1,4 +1,5 @@
-# Android App Server
+# KUSTO Server
+Restaurant recommandation application for KU
 
 ## Clone
 via https
